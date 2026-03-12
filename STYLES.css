@@ -1,0 +1,54 @@
+* {
+    background-color: wheat;
+}
+h1{    
+   font-size: 1.2rem;
+   text-align: left;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: aqua;
+
+}
+h2{    
+   font-size: 1.2rem;
+   text-align: left;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   color: red;
+   text-decoration: underline;
+}
+div {
+    font-weight: 400;
+}
+.t{
+    font-weight: 600;
+}
+.h {
+    font-weight: 900;
+    width: 140px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+h3 {
+    font-weight: 100;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-decoration: underline;
+}
+li{
+    background-color: aquamarine;
+    font-weight: 900;
+    height: 0px;
+    width: 100px;
+    padding: 20px;
+list-style-position: inside;
+border-style: inset;
+border-radius: 09%;
+}
+.e {
+    list-style-position: outside;
+    background-color: whitesmoke;
+    font-weight: 100;
+    border-style: inset;
+    border-radius: 09%;
+}
+p {
+    font-weight: 900;
+}
