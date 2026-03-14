@@ -1,0 +1,101 @@
+🎯 EXERCICE JOUR 1 : CE QUE TU SAIS VRAIMENT
+Je vais te donner un exercice qui utilise SEULEMENT ce qu'on a vu ensemble aujourd'hui.
+
+🏆 EXERCICE RÉCAPITULATIF JOUR 1
+📋 MISSION : Créer une page "À propos de moi"
+Objectif : Créer une page web personnelle qui présente qui tu es.
+
+🎯 CAHIER DES CHARGES
+Tu dois créer un fichier about.html qui contient :
+1. HEADER (En-tête)
+
+Ton prénom et nom en <h1>
+Ton titre/métier actuel ou futur en <p> avec <strong>
+Une phrase de présentation
+
+2. MAIN (Contenu principal)
+Section 1 : À propos
+
+Titre de section en <h2>
+2-3 paragraphes <p> sur toi :
+
+Qui tu es
+Ce que tu fais
+Tes passions
+
+
+Utilise <strong> pour mettre en valeur des mots importants
+Utilise <em> pour l'emphase sur certaines phrases
+
+Section 2 : Mes objectifs
+
+Titre en <h2>
+Une liste ordonnée <ol> de tes 3-5 objectifs principaux
+Chaque objectif dans un <li>
+
+Section 3 : Mes passions
+
+Titre en <h2>
+Une liste non ordonnée <ul> de tes hobbies/passions
+Au moins 5 items dans des <li>
+
+Section 4 : Projets en cours
+
+Titre en <h2>
+2-3 projets, chacun dans un <div> :
+
+Nom du projet en <h3>
+Description courte en <p>
+Un lien <a> vers plus d'infos (même si fictif pour l'instant)
+
+
+
+Section 5 : Mes réseaux
+
+Titre en <h2>
+Liste <ul> de liens <a> vers :
+
+GitHub (même si tu n'as pas encore de compte, mets "#")
+LinkedIn
+Email (avec mailto:)
+Autre réseau social
+
+
+
+3. FOOTER (Pied de page)
+
+Une citation qui te motive en <p> avec <em>
+Un petit texte de copyright : "© 2026 - [Ton nom]"
+
+
+✅ BALISES À UTILISER OBLIGATOIREMENT
+Coche au fur et à mesure :
+
+ <!DOCTYPE html>
+ <html lang="fr">
+ <head> avec <meta charset="UTF-8"> et <title>
+ <header>
+ <main>
+ <footer>
+ Au moins 3 <section>
+ <h1>, <h2>, <h3>
+ Au moins 5 <p>
+ Au moins 3 <div>
+ <ul> avec plusieurs <li>
+ <ol> avec plusieurs <li>
+ Au moins 3 liens <a> (dont un avec mailto:)
+ <strong> au moins 2 fois
+ <em> au moins 1 fois
+
+
+🚫 BALISES INTERDITES (on ne les connaît pas encore)
+❌ <form>
+❌ <input>
+❌ <table>
+❌ <nav>
+❌ <article>
+❌ <img> (on ne l'a pas vraiment pratiquée)
+❌ attributs class="" ou id=""
+❌ balise <style>
+❌ balise <script>
+Pourquoi ? Ces balises seront pour les jours 2-10 ! On avance progressivement.
