@@ -1,0 +1,117 @@
+* {
+   
+    font-weight: 900;
+}
+body {
+    font-size: 20px;
+    line-height: 1.4;
+    background-color: rgb(0, 204, 255);
+}
+header h1 {
+    color: rgb(246, 0, 0);
+    text-decoration: underline;
+    text-align: center;
+}
+header  {
+    text-align: center;
+    font-size: 38px;
+}
+.e {
+    text-align: left;
+    height: 100px;
+    background-color: oklab(46.765% 0.01219 -0.28707);
+    width: 850px;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 30px;
+    color: beige;
+}
+header strong{
+    text-decoration: underline;
+}
+main {
+      padding: 10px;
+      margin: 20px;
+}
+h2 {
+    text-decoration: underline;
+    color: rgb(255, 247, 0);
+    height: 70px;
+    width: 1000px;
+    background-color: rgb(65, 62, 62);
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 40px;
+}
+li {
+    text-decoration: underline;
+    background-color: rgb(255, 246, 116);
+    padding-top: 10px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.z {
+    background-color: rgb(238, 255, 0);
+    margin: 02%;
+    padding: 05px;
+    border-radius: 15px;   
+}
+.r{
+    background-color: rgb(238, 255, 0);
+    margin: 02%;
+    padding: 05px;
+    border-radius: 15px;     
+}
+h3 {
+    background-color: rgb(128, 0, 0);
+    margin: 30px;
+    padding: 015px;
+    color: aliceblue;
+    font-size: 28px;
+    text-align: center;
+    border-radius: 20px;
+}
+.s a {
+    background-color: rgb(101, 255, 201);
+    margin: 30px;
+    padding: 3px;
+    border-radius: 5px ;
+    color: rgb(142, 21, 242);
+}
+.s {
+    padding: 10px;
+    margin: 12px;
+    background-color: rgb(255, 151, 23);
+    border-radius: 10px;
+    color: rgb(6, 1, 25);
+    font-family: Arial, Helvetica, sans-serif;
+}
+footer {
+    background-color: rgb(255, 10, 2);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+footer .k {
+    text-align: center;
+    color: rgb(255, 255, 0);
+}
+.m {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 35px;
+} 
+footer div {
+    height: 9px;
+    width: 656px;
+    background-color: black;
+
+}
+ footer .w {
+    text-align: center;
+    color: azure;
+ }
