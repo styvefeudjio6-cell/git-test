@@ -1,0 +1,296 @@
+🔥 DÉFIS FLEXBOX - ZÉRO CODE, 100% PRATIQUE
+✅ TU AS RAISON DE DEMANDER ÇA
+Tutorial hell = Copier-coller du code
+Vrai apprentissage = Résoudre des problèmes réels
+Let's go ! 💪
+
+🎯 DÉFI 1 : NAVBAR HORIZONTALE (15 MIN)
+Crée un fichier navbar.html
+OBJECTIF VISUEL :
+┌─────────────────────────────────────────┐
+│  Logo    Accueil  Services  Contact    │
+└─────────────────────────────────────────┘
+CONTRAINTES :
+
+Logo à gauche
+Les 3 liens (Accueil, Services, Contact) espacés à droite
+Tout sur la même ligne
+Espace égal entre les liens
+Hauteur navbar : 60px
+Fond : bleu foncé
+Texte : blanc
+
+CE QUE TU DOIS FAIRE :
+
+Crée la structure HTML (nav > div pour logo + div pour liens)
+Utilise Flexbox pour aligner
+SANS regarder de code, juste avec ce que tu as appris
+
+BONUS : Au hover sur un lien, change la couleur de fond
+
+🎯 DÉFI 2 : CARDS DE PRODUITS (20 MIN)
+Crée products.html
+OBJECTIF VISUEL :
+┌────────┐  ┌────────┐  ┌────────┐
+│ Image  │  │ Image  │  │ Image  │
+│ Titre  │  │ Titre  │  │ Titre  │
+│ Prix   │  │ Prix   │  │ Prix   │
+│[Acheter]│  │[Acheter]│  │[Acheter]│
+└────────┘  └────────┘  └────────┘
+CONTRAINTES :
+
+3 cards côte à côte
+Chaque card : 250px de large
+Espace de 20px entre les cards
+Tout centré dans la page
+Le contenu de chaque card centré verticalement ET horizontalement
+Bouton "Acheter" en bas de chaque card
+
+CE QUE TU DOIS FAIRE :
+
+Container avec 3 cards
+Chaque card = image (placeholder) + titre + prix + bouton
+Utilise Flexbox pour aligner les cards
+Utilise Flexbox DANS chaque card pour organiser le contenu
+
+BONUS : Si tu réduis la fenêtre, les cards passent en colonne
+
+🎯 DÉFI 3 : HERO SECTION (25 MIN)
+Crée hero.html
+OBJECTIF VISUEL :
+┌─────────────────────────────────────────┐
+│                                         │
+│                                         │
+│           TITRE PRINCIPAL               │
+│         Sous-titre descriptif           │
+│          [CTA Button]                   │
+│                                         │
+│                                         │
+└─────────────────────────────────────────┘
+CONTRAINTES :
+
+Hauteur : 100vh (toute la hauteur de l'écran)
+Tout centré verticalement ET horizontalement
+Fond : dégradé ou image
+Texte centré
+Bouton en dessous du texte
+
+CE QUE TU DOIS FAIRE :
+
+Section qui prend toute la hauteur
+Contenu centré parfaitement
+Titre, sous-titre, bouton empilés verticalement
+Tout au milieu de l'écran
+
+
+🎯 DÉFI 4 : FOOTER AVEC 3 COLONNES (20 MIN)
+Crée footer.html
+OBJECTIF VISUEL :
+┌────────────┬────────────┬────────────┐
+│  À propos  │  Services  │   Contact  │
+│  - Lien 1  │  - Lien 1  │   Email    │
+│  - Lien 2  │  - Lien 2  │   Tél      │
+│  - Lien 3  │  - Lien 3  │   Adresse  │
+└────────────┴────────────┴────────────┘
+│          © 2026 Ton Nom                │
+└─────────────────────────────────────────┘
+CONTRAINTES :
+
+3 colonnes de largeur égale
+Chaque colonne alignée en haut
+Ligne de copyright en bas, centrée
+Fond : gris foncé
+Texte : blanc
+
+CE QUE TU DOIS FAIRE :
+
+Container avec 3 divs (colonnes)
+Chaque colonne : titre + liste de liens
+Footer copyright séparé en dessous
+Utilise Flexbox pour les colonnes ET pour le copyright
+
+
+🎯 DÉFI 5 : PRICING TABLE (30 MIN)
+Crée pricing.html
+OBJECTIF VISUEL :
+┌──────────┐  ┌──────────┐  ┌──────────┐
+│  BASIC   │  │   PRO    │  │ PREMIUM  │
+├──────────┤  ├──────────┤  ├──────────┤
+│  €9/mois │  │ €29/mois │  │ €99/mois │
+├──────────┤  ├──────────┤  ├──────────┤
+│ ✓ Feature│  │ ✓ Feature│  │ ✓ Feature│
+│ ✓ Feature│  │ ✓ Feature│  │ ✓ Feature│
+│ ✗ Feature│  │ ✓ Feature│  │ ✓ Feature│
+├──────────┤  ├──────────┤  ├──────────┤
+│[Choisir] │  │[Choisir] │  │[Choisir] │
+└──────────┘  └──────────┘  └──────────┘
+CONTRAINTES :
+
+3 plans côte à côte
+Chaque plan : même hauteur
+Plan "PRO" légèrement plus grand et en surbrillance
+Features alignées verticalement
+Bouton en bas de chaque plan
+
+CE QUE TU DOIS FAIRE :
+
+Container avec 3 pricing cards
+Chaque card : header + prix + liste features + bouton
+Utilise Flexbox pour aligner les cards
+Utilise Flexbox DANS chaque card pour organiser
+Le plan PRO doit se démarquer visuellement
+
+
+🎯 DÉFI 6 : GALLERY RESPONSIVE (35 MIN)
+Crée gallery.html
+OBJECTIF VISUEL (écran large) :
+┌────┐ ┌────┐ ┌────┐ ┌────┐
+│ 1  │ │ 2  │ │ 3  │ │ 4  │
+└────┘ └────┘ └────┘ └────┘
+┌────┐ ┌────┐ ┌────┐ ┌────┐
+│ 5  │ │ 6  │ │ 7  │ │ 8  │
+└────┘ └────┘ └────┘ └────┘
+OBJECTIF VISUEL (écran moyen) :
+┌────┐ ┌────┐ ┌────┐
+│ 1  │ │ 2  │ │ 3  │
+└────┘ └────┘ └────┘
+┌────┐ ┌────┐ ┌────┐
+│ 4  │ │ 5  │ │ 6  │
+└────┘ └────┘ └────┘
+OBJECTIF VISUEL (mobile) :
+┌────┐
+│ 1  │
+└────┘
+┌────┐
+│ 2  │
+└────┘
+CONTRAINTES :
+
+8 images (utilise des placeholders de couleur)
+S'adapte automatiquement à la taille d'écran
+Espace égal entre toutes les images
+Images carrées
+
+CE QUE TU DOIS FAIRE :
+
+Container avec 8 divs (images)
+Utilise flex-wrap pour le passage à la ligne
+Les images s'adaptent automatiquement
+BONUS : Ajoute un effet au hover
+
+
+🎯 DÉFI 7 : DASHBOARD LAYOUT (40 MIN) ⭐ DIFFICILE
+Crée dashboard.html
+OBJECTIF VISUEL :
+┌─────────────────────────────────────────┐
+│              NAVBAR                     │
+├──────┬──────────────────────────────────┤
+│      │                                  │
+│ SIDE │         MAIN CONTENT             │
+│ BAR  │         ┌─────┐ ┌─────┐          │
+│      │         │Card1│ │Card2│          │
+│ Lien │         └─────┘ └─────┘          │
+│ Lien │         ┌─────┐ ┌─────┐          │
+│ Lien │         │Card3│ │Card4│          │
+│      │         └─────┘ └─────┘          │
+└──────┴──────────────────────────────────┘
+CONTRAINTES :
+
+Navbar en haut (fixe)
+Sidebar à gauche (200px de large)
+Main content prend le reste
+4 cards dans le main content (2x2)
+Toute la page prend 100vh
+
+CE QUE TU DOIS FAIRE :
+
+Structure : navbar + container (sidebar + main)
+Utilise Flexbox pour navbar
+Utilise Flexbox pour sidebar + main
+Utilise Flexbox pour les 4 cards
+
+C'EST LE PLUS DIFFICILE. Prends ton temps.
+
+🎯 DÉFI 8 : APPLIQUER À TES PROJETS (30 MIN)
+8A : Transformer about.html
+
+ Header : centré parfaitement (vertical + horizontal)
+ Section passions : liste horizontale avec wrap
+ Section réseaux : 4 cards alignées
+ Footer : contenu centré en colonne
+
+8B : Transformer cv.html
+
+ Section expérience : chaque job = card Flexbox
+ Section langues : liste horizontale
+ Section compétences : grid de compétences
+ Footer contact : aligné proprement
+
+
+✅ VALIDATION DE TES DÉFIS
+Pour CHAQUE défi, demande-toi :
+
+Ça ressemble à la maquette ? (visuellement)
+C'est responsive ? (réduis la fenêtre)
+Le code est propre ? (pas de margin: -50px ou trucs bizarres)
+Tu as utilisé Flexbox ? (pas de float ou position: absolute)
+
+
+🔥 ORDRE RECOMMANDÉ
+Fais-les dans cet ordre :
+Niveau 1 - Facile (commence par là) :
+
+Défi 1 : Navbar
+Défi 3 : Hero Section
+
+Niveau 2 - Moyen :
+3. Défi 2 : Cards produits
+4. Défi 4 : Footer 3 colonnes
+5. Défi 5 : Pricing table
+Niveau 3 - Avancé :
+6. Défi 6 : Gallery responsive
+7. Défi 7 : Dashboard
+Niveau 4 - Application réelle :
+8. Défi 8 : Tes propres projets
+
+⏰ TIMING SUGGÉRÉ
+Total : 3-4h
+
+Défis 1-3 : 1h
+Défis 4-5 : 1h
+Défi 6 : 40 min
+Défi 7 : 45 min
+Défi 8 : 30-45 min
+
+Fais des pauses toutes les heures !
+
+💪 CHALLENGE SUPPLÉMENTAIRE
+Si tu finis tout ça :
+DÉFI ULTIME : Crée une landing page complète
+
+Navbar
+Hero section
+Section "Features" (3 cards)
+Section "Pricing" (3 plans)
+Footer
+
+TOUT avec Flexbox.
+ZÉRO code donné. À toi de jouer.
+
+💬 QUAND TU AS FINI
+Message-moi :
+"FLEXBOX MAÎTRISÉ 🔥
+
+X défis terminés
+Difficultés : [ce qui t'a bloqué]
+Prêt pour la suite"
+
+Ensuite on passe à la SÉCURITÉ (Clickjacking + CSP).
+
+🎯 DERNIÈRE INSTRUCTION
+NE LIS AUCUN TUTO.
+NE REGARDE AUCUNE VIDÉO.
+JUSTE TOI + TON CODE + LES DESCRIPTIONS.
+Si tu es bloqué 10 min sur un truc → Message-moi, je te donne UN indice, PAS le code.
+GO ! COMMENCE PAR LE DÉFI 1 ! 💪🔥
+OUVRE ton éditeur. CODE. MAINTENANT.

@@ -1,0 +1,25 @@
+#a {
+    background-color: blue;
+}
+#z {
+    background-color: aquamarine;
+}
+#e {
+    background-color: rgb(255, 0, 0);
+}
+#container {
+    height: 500px;
+    border: 10px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.s {
+    height: 100px;
+    width: 100px;
+    margin: 10px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
