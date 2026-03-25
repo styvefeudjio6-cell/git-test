@@ -1,0 +1,276 @@
+img {
+    width: 150px;
+    height: 150px;
+}
+#h1 {
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 900;
+    font-size: 25px;
+    background-color: rgb(200, 200, 200);
+    padding: 10px;
+    color: white;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 20px auto;
+}
+#h2 h2 {
+        font-size: 40px;
+        color: red;
+        text-decoration: underline;
+        text-align: initial;
+}
+#h2 img{
+    display: block;
+    margin: 0 auto;
+    height: 300px;
+    width: 300px;
+    padding: 10px;
+}
+#h2 p {
+    font-size: 20px;
+    color: black;
+    font-weight: 700;
+    text-align: initial;
+}
+.h2 {
+    
+    margin: 20px auto;
+    border: 3px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: lightgray;
+}
+#bio {
+    font-size: 20px;
+    color: rgb(255, 0, 0);
+    font-weight: 700;
+    text-align: initial;
+    text-decoration: underline;
+    font-size: 40px;
+}
+#bios{
+    font-size: 20px;
+    color: black;
+    font-weight: 700;
+    text-align: initial;
+}
+.cv {
+    display: block;
+    margin: 0 auto;
+    height: 300px;
+    width: 300px;
+    padding: 10px;
+}
+
+#image {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    border: 3px solid black;
+    border-radius: 20px;
+    margin:  auto;
+    padding: 22px;
+    background-color: lightgray;
+    justify-content: space-evenly;
+    gap : 10px;
+}
+.img {
+    border: 3px solid black;
+    border-radius: 20px;
+}
+#services h2 {
+    font-size: 50px;
+    color: red;
+    text-decoration: underline;
+    text-align: center;    
+}
+#services{
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: lightgray;
+    font-weight: 900;
+}
+#services p {
+    font-size: 20px;
+    color: black;
+    text-align: initial;
+}
+h2 {
+    font-size: 50px;
+    color: red;
+    text-decoration: underline;
+    text-align: center;
+}
+#contact {
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: lightgray;
+}
+#contact p {
+    font-size: 20px;
+    color: black;
+    text-align: initial;
+    font-weight: 900;
+}
+#reseaux {
+    border: 3px solid black;
+    border-radius: 20px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: lightgray;
+}
+#reseaux p {
+    font-size: 20px;
+    color: black;
+    text-align: initial;
+    font-weight: 900;
+}
+#h1 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#h1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: rgb(132, 132, 132);
+    transform: scale(1.02);
+    opacity: 0.9;
+    cursor: pointer;
+}    
+#h1:hover h1 {
+    transform: translateY(-5px);
+    transform: scale(1.02);
+    opacity: 0.9;
+    cursor: pointer;
+}   
+#h1 h1 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#h1:hover h1 {
+    transform: translateY(-5px);
+    transform: scale(1.02);
+    opacity: 0.9;
+    cursor: pointer;
+}   
+#h1:hover h2 {
+    transform: translateY(-5px);
+    transform: scale(1.02);
+    opacity: 0.9;
+    cursor: pointer;
+}
+.h2 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.h2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: rgb(132, 132, 132);
+    transform: scale(1.02);
+    opacity: 0.9;
+    cursor: pointer;
+}
+.cv:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: rgb(255, 255, 255);
+    transform: scale(1.02);
+    opacity: 0.9;
+
+}
+.cv{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#bio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.018);
+    background-color: rgba(132, 132, 132, 0.017);
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+#bio {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.h2 h2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.018);
+    background-color: rgba(132, 132, 132, 0.017);
+    transform: scale(1.04);
+    opacity: 0.9;
+}
+.h2 h2{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#image .img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: rgb(255, 255, 255);
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+#image .img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;      
+}
+#image{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: rgb(189, 189, 189);
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+#services {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#services:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: rgb(189, 189, 189);
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+#services h2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: rgb(255, 255, 255);
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+#services h2 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#reseaux {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#reseaux:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: rgb(189, 189, 189);
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+#contact {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#contact:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: rgb(189, 189, 189);
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+h2 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.h2:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    background-color: rgb(132, 132, 132);
+    transform: scale(1.02);
+    opacity: 0.9;
+}
