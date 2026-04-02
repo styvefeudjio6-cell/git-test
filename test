@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASH BOARD ADMIN</title>
+    <link rel="stylesheet" href="PORTFOLIO.css">
+</head>
+<body>
+    <header>
+        <div id="h1">
+            <h1 class="name h1">FEUDJIO KENGNI STYVE</h1>
+            <h2 class="portfolio">PORTOFOLIO PHOTOGRAPHE</h2>
+        </div>
+        <div class="h2">
+            <h2 class="aboutme">A PROPOS DE MOI :</h2>
+            <img src="modele-cv-basique-gratuit-word.jpg" alt="jet et lambo" class="cv">
+             <p id="bio"> BIO : </p>
+             <p id="bios"> J'adore la photographie et le design</p>
+        </div>
+        <div id="image">
+            
+            <img src="Jet et Lambo.jpg" alt="photo de profil" class="img">
+            <img src="Business.jpg" alt="photo de profil" class="img">
+            <img src="télécharger (1).jpg" alt="photo de profil" class="img">
+            <img src="télécharger (2).jpg" alt="photo de profil" class="img">
+            <img src="télécharger (4).jpg" alt="photo de profil" class="img">
+            <img src="télécharger (3).jpg" alt="photo de profil" class="img">
+            <img src="télécharger (6).jpg" alt="photo de profil" class="img">
+            <img src="télécharger (8).jpg" alt="photo de profil" class="img">
+            <img src="télécharger.jpg" alt="photo de profil" class="img">
+            <img src="télécharger.jpg" alt="photo de profil" class="img">
+            <img src="télécharger (3).jpg" alt="photo de profil" class="img">
+            <img src="télécharger (1).jpg" alt="photo de profil" class="img">
+        </div>
+        <div id="services">
+            <h2 class="services">SERVICES</h2>
+            <p>PHOTOGRAPHIE</p>
+            <p>DESIGN</p>
+            <p>EDITION</p>
+        </div>
+        <div id="contact">
+            <h2>CONTACT</h2>
+            <p>EMAIL:
+                <a href="mailto:feudjio.kengni@univ-dakar.edu.sn">feudjio.kengni@univ-dakar.edu.sn</a>
+            </p>
+        </div>
+        <div id="reseaux">
+            <h2>RESEAUX SOCIAUX</h2>
+            <p>FACEBOOK: <a href="https://www.facebook.com/feudjio.kengni">feudjio.kengni</a></p>
+            <p>INSTAGRAM: <a href="https://www.instagram.com/feudjio.kengni/">feudjio.kengni</a></p>
+            <p>LINKEDIN: <a href="https://www.linkedin.com/in/feudjio-kengni-styve-9b8b1b1b6/">feudjio-kengni-styve</a></p>
+        </div>
+    </header>
+</body>
+</html>

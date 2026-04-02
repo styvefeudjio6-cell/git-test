@@ -1,0 +1,33 @@
+main {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    background-color: rgb(222, 5, 37);
+    grid-template-columns: 200px 1fr;
+    grid-column: span 2;
+    gap: 5px;
+}
+section {
+    background-color: whitesmoke;
+    border: 1px solid black;
+    margin: 10px;
+    padding: auto;
+    text-align: center;
+}
+.en-tete {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.main {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.aside {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+.footer {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}

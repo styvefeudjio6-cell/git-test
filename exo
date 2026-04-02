@@ -419,3 +419,26 @@ VALIDATION PROJET 3
  3 layouts différents (mobile/tablet/desktop)
  CSP avec SRI comprise et implémentée
  Design magazine professionnel
+
+
+ <body>
+    <header class="header">
+        <nav class="navbar">
+            <section class="sidebar">
+                <h2>SIDEBAR</h2>
+                <ul>
+                    <li><a href="#">nav 1</a></li>
+                    <li><a href="#">nav 2</a></li>
+                    <li><a href="#">nav 3</a></li>
+                    <li><a href="#">nav 4</a></li>
+                    <li><a href="#">nav 5</a></li>
+                </ul>
+            </section>
+                        
+            
+        </nav>
+    </header>
+    
+    
+</body>
+</html>

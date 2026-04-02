@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color : white;
+    padding: 10px 30px;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+.navbar ul li {
+    margin:  0 15px;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.navbar ul li a:hover {
+    text-decoration: underline;
+    color: lightgreen;
+}
+.navbar ul li {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar ul li:hover {
+    transform: scale(2.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding: 20px;
+    background-color: #989898;
+    margin: 20px 0;
+    gap: 10px;
+    width: 100%;
+    height: 400px;
+}
+.features .article1 {
+    border: #333 solid 3px;
+    margin: 20px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    align-content: center;
+}
+.features .articles23 {
+    border: #333 solid 3px;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    margin: 20px;
+}
+.features .article2 {
+    grid-row: 1 / 1;
+    align-content: center;
+}
+.features .article3 {
+    grid-row: 2 / 2;
+    align-content: center;
+    border-top: #000000 solid 3px;
+}
+.features .article4 {
+    border: #333 solid 3px;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    margin: 16px;
+    align-content: center;
+}
+.articles5678 {
+    background-color: #989898;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 20px 0  ;
+    height: 250px;
+    align-items: center;
+    padding: 20px;
+}
+.articles5678 Article {
+    border: #000000 solid 3px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.article9 {
+    margin: 20px 0;
+    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: #989898;
+    text-align: center;
+}
+.article9 .sidebar {
+    border: #333 solid 3px;
+    margin: 20px;
+    grid-column: 1 / 2;
+    align-content: center;
+}
+.article9 .main-content {
+    border: #333 solid 3px;
+    margin: 20px;
+    grid-column: 2 / 3;
+    align-content: center;
+}
+/* ========== HOVER EFFECTS ========== */
+
+/* NAVBAR LINKS - déjà OK mais améliore */
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #4ade80;  /* Vert plus moderne */
+    transform: translateY(-2px);
+}
+
+/* ARTICLE 1 (Featured) */
+.article1 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.article1:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background-color: #a8a8a8;
+}
+
+/* ARTICLES 2-3 */
+.article2,
+.article3 {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.article2:hover,
+.article3:hover {
+    transform: translateX(10px);
+    background-color: #a8a8a8;
+}
+
+/* ARTICLE 4 */
+.article4 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.article4:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background-color: #a8a8a8;
+}
+
+/* ARTICLES 5-8 */
+.articles5678 Article {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.articles5678 Article:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    background-color: #b8b8b8;
+    z-index: 10;
+}
+
+/* SIDEBAR */
+.sidebar {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.sidebar:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background-color: #a8a8a8;
+}
+
+/* MAIN CONTENT */
+.main-content {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.main-content:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background-color: #a8a8a8;
+}
+
+/* TEXTE HOVER (titres) */
+h2 {
+    transition: color 0.3s ease;
+}
+
+.article1:hover h2,
+.sidebar:hover h2,
+.main-content:hover h2 {
+    color: #4ade80;
+}
+/* Mobile first */
+@media (min-width: 768px) {
+    /* Tablet */
+}
+
+@media (min-width: 1024px) {
+    /* Desktop */
+}
