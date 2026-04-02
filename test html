@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin Dashboard</title>
+</head>
+<body>
+  <header> <!-- topbar -->
+    <nav> <!-- navigation principale -->
+      <ul><li><a href="#">Dashboard</a></li></ul>
+    </nav>
+  </header>
+
+  <aside> <!-- sidebar -->
+    <nav>
+      <ul>
+        <li><a href="#stats">Stats</a></li>
+        <li><a href="#users">Users</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <main> <!-- contenu principal -->
+    <section id="stats"> <!-- bloc logique -->
+      <article class="card"> <!-- contenu autonome -->
+        <h2>Revenue</h2>
+        <p>€12,345</p>
+      </article>
+      <article class="card">
+        <h2>Users</h2>
+        <p>1,234</p>
+      </article>
+    </section>
+
+    <section id="table">
+      <h2>Recent activity</h2>
+      <table>
+        <thead><tr><th>User</th><th>Action</th></tr></thead>
+        <tbody><tr><td>Styve</td><td>Login</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 — Ton SaaS</p>
+  </footer>
+</body>
+</html>

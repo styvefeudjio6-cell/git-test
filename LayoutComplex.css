@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%; 
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+#sidebar, #ads, #content { 
+    min-height:0;
+    overflow:auto;
+}
+
+#main { 
+    flex: 1 1 auto;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 0.08fr 1fr 0.1fr;   /* sidebar | content | ads */
+    grid-template-rows: auto 1fr auto;         /* top (stats) | middle | bottom (gallery) */
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+header {
+    background-color: rgb(80, 101, 120);    
+    padding: 20px;
+    padding: 20px;
+    display: flex;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+header ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+#sidebar {
+    background-color: #ca7474;
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+    padding: 20px;
+    text-align: center;
+    justify-content: space-between;
+
+}
+#sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+#sidebar ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+#content {
+    background-color: #1c53a5;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    height: auto;
+    padding: 20px;
+    text-align: center;
+    justify-content: space-between;
+}
+#contents {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+.gallerys {
+    background-color: #3e4550;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    margin-top: 05px;
+}
+#images {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+#gallery img {
+  height: auto;           /* laisse l'image garder son ratio naturel */
+  max-height: 300px;      /* limite la hauteur pour ne pas étirer le header */
+  object-fit: contain;    /* montre toute l'image sans crop */
+  display: block;         /* supprime l'espace inline qui augmente la hauteur */
+}
+
+#ads {
+    grid-column: 3 / 4;
+    grid-row:  1/ 4;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+footer {
+    background-color: #860d0d;
+    padding: 20px;
+    text-align: center;
+    align-items: center;
+    flex:0 0 auto;
+}
+.site-header {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.site-header:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    border:1px solid rgb(255, 255, 255);
+    margin: 2px;
+}
