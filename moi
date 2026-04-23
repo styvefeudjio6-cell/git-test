@@ -1,0 +1,570 @@
+🗓️ PROGRAMME COMPLET 8 SEMAINES
+
+🔵 SEMAINE 1-2 : WEB DEV SOLIDE (BASE OBLIGATOIRE)
+"Sans ça, tu ne comprends RIEN à la cybersécurité web"
+Copier le tableau
+
+
+Jour
+Objectif
+Livrable
+Heures
+Kiff /10
+
+
+
+J1
+JavaScript : Fonctions + Scope
+10 fonctions codées
+2h30
+
+
+
+J2
+JavaScript : Arrays + filter/map/reduce
+Mini calculatrice notes
+2h30
+
+
+
+J3
+JavaScript : Objects + Classes
+Gestionnaire contacts
+2h30
+
+
+
+J4
+DOM Manipulation + Events
+Todo List interactive
+2h30
+
+
+
+J5
+Formulaires + Validation JS
+Form avec validation
+2h30
+
+
+
+J6
+Fetch API + Async/Await
+App météo avec API
+2h30
+
+
+
+J7
+PROJET SEMAINE 1
+Site interactif complet
+2h30
+
+
+
+J8
+Git + GitHub (base absolue)
+Tous projets sur GitHub
+2h30
+
+
+
+J9
+Linux : Installation + Navigation
+Kali Linux sur VM installé
+2h30
+
+
+
+J10
+Linux : Bash scripting bases
+10 scripts utiles
+2h30
+
+
+
+J11
+Linux : Permissions + Processus
+Maîtrise terminal
+2h30
+
+
+
+J12
+Réseaux : TCP/IP + HTTP + DNS
+Schéma réseau dessiné
+2h30
+
+
+
+J13
+Réseaux : Wireshark pratique
+Analyser 3 captures
+2h30
+
+
+
+J14
+PROJET SEMAINE 2
+Script Bash automatisation
+2h30
+
+
+
+🎯 OBJECTIF FIN S2 : JS solide + Linux opérationnel + Réseaux compris
+
+🔴 SEMAINE 3-4 : CYBERSÉCURITÉ (TA PASSION #1)
+"On rentre dans le vif du sujet"
+Copier le tableau
+
+
+Jour
+Objectif
+Livrable
+Heures
+Kiff /10
+
+
+
+J15
+OWASP Top 10 : XSS en pratique
+Exploiter XSS sur DVWA
+2h30
+
+
+
+J16
+OWASP : SQL Injection
+Exploiter SQLi sur DVWA
+2h30
+
+
+
+J17
+OWASP : CSRF + Clickjacking
+Comprendre + exploiter
+2h30
+
+
+
+J18
+Burp Suite : Interface + Intercepter
+5 requêtes analysées
+2h30
+
+
+
+J19
+Burp Suite : Repeater + Intruder
+Brute force basique
+2h30
+
+
+
+J20
+TryHackMe : Premiers rooms
+3 rooms complétés
+2h30
+
+
+
+J21
+PROJET SEMAINE 3
+Rapport de vulnérabilités
+2h30
+
+
+
+J22
+Nmap : Scanning + Discovery
+Scanner ton réseau local
+2h30
+
+
+
+J23
+Metasploit : Bases
+Exploiter une VM cible
+2h30
+
+
+
+J24
+Password Cracking : Hashcat + John
+Cracker 10 hashes
+2h30
+
+
+
+J25
+CTF Débutant : OverTheWire Bandit
+Bandit Level 0-10
+2h30
+
+
+
+J26
+CTF Suite : Bandit + Natas
+Bandit 11-20
+2h30
+
+
+
+J27
+Forensics Basique : Steganographie
+Trouver flag caché
+2h30
+
+
+
+J28
+PROJET SEMAINE 4
+Mini CTF personnel créé
+2h30
+
+
+
+🎯 OBJECTIF FIN S4 : Tu sais si la cybersécurité te PASSIONNE vraiment
+
+🟡 SEMAINE 5 : PYTHON + AUTOMATION (PASSION #2)
+"Le langage de TOUT : sécu, IA, automation"
+Copier le tableau
+
+
+Jour
+Objectif
+Livrable
+Heures
+Kiff /10
+
+
+
+J29
+Python bases : Syntaxe + Types
+20 exercices résolus
+2h30
+
+
+
+J30
+Python : Fonctions + Modules
+Calculatrice Python
+2h30
+
+
+
+J31
+Python : Fichiers + Exceptions
+Lire/écrire CSV
+2h30
+
+
+
+J32
+Python sécu : Requests + Scraping
+Scraper un site
+2h30
+
+
+
+J33
+Python sécu : Socket programming
+Scanner de ports
+2h30
+
+
+
+J34
+Python automation : OS + Subprocess
+Script qui automatise 3 tâches
+2h30
+
+
+
+J35
+PROJET SEMAINE 5
+Bot Telegram fonctionnel
+2h30
+
+
+
+🎯 OBJECTIF FIN S5 : Python opérationnel pour sécu ET automation
+
+🟣 SEMAINE 6 : IA / MACHINE LEARNING (PASSION #3)
+"Comprendre RÉELLEMENT ce qu'est l'IA"
+Copier le tableau
+
+
+Jour
+Objectif
+Livrable
+Heures
+Kiff /10
+
+
+
+J36
+IA : C'est quoi vraiment ? ML vs DL vs AI
+Schéma complet dessiné
+2h30
+
+
+
+J37
+Python IA : NumPy + Pandas
+Analyser un dataset CSV
+2h30
+
+
+
+J38
+Python IA : Matplotlib + Visualisation
+5 graphiques générés
+2h30
+
+
+
+J39
+Machine Learning : Scikit-learn bases
+Prédire prix maison
+2h30
+
+
+
+J40
+ML : Classification + KNN
+Classifier des données
+2h30
+
+
+
+J41
+Deep Learning : Keras/TensorFlow intro
+Reconnaître chiffres MNIST
+2h30
+
+
+
+J42
+PROJET SEMAINE 6
+Détecteur spam emails
+2h30
+
+
+
+🎯 OBJECTIF FIN S6 : Tu comprends l'IA et tu sais si ça te passionne
+
+🟠 SEMAINE 7 : SYSTÈMES + BAS NIVEAU (PASSION #5)
+"Comprendre ce qui se passe VRAIMENT dans la machine"
+Copier le tableau
+
+
+Jour
+Objectif
+Livrable
+Heures
+Kiff /10
+
+
+
+J43
+Architecture : CPU + RAM + OS
+Schéma complet
+2h30
+
+
+
+J44
+C avancé : Pointeurs + Mémoire
+10 programmes avec pointeurs
+2h30
+
+
+
+J45
+C : Buffer overflow basique
+Exploiter un overflow simple
+2h30
+
+
+
+J46
+Assembleur : Bases x86
+Lire du code ASM
+2h30
+
+
+
+J47
+Reverse Engineering : Ghidra
+Analyser un binaire simple
+2h30
+
+
+
+J48
+OS : Processus + Threads + IPC
+Programme multithread en C
+2h30
+
+
+
+J49
+PROJET SEMAINE 7
+Keylogger éducatif en C
+2h30
+
+
+
+🎯 OBJECTIF FIN S7 : Tu sais si le bas niveau t'attire
+
+🟢 SEMAINE 8 : DÉCISION + LANCEMENT (PASSION CONFIRMÉE)
+"Tu choisis ta voie ET tu lances quelque chose"
+Copier le tableau
+
+
+Jour
+Objectif
+Livrable
+Heures
+Kiff /10
+
+
+
+J50
+Analyse tes notes "Kiff"
+Tableau comparatif complet
+2h30
+
+
+
+J51
+Deep dive domaine #1 choisi
+Plan spécialisation 6 mois
+2h30
+
+
+
+J52
+Projet final (1/4) : Setup
+Projet lancé
+2h30
+
+
+
+J53
+Projet final (2/4) : Core features
+Features principales
+2h30
+
+
+
+J54
+Projet final (3/4) : Finalisation
+Projet quasi-complet
+2h30
+
+
+
+J55
+Projet final (4/4) : Déploiement
+PROJET EN LIGNE
+2h30
+
+
+
+J56
+CV + GitHub professionnel
+Profil GitHub béton
+2h30
+
+
+
+J57
+LinkedIn + Portfolio
+Profil pro créé
+2h30
+
+
+
+J58
+Présenter ton travail
+Post LinkedIn publié
+2h30
+
+
+
+J59
+Plan vacances : que faire pendant ?
+Programme vacances écrit
+2h30
+
+
+
+J60
+🎉 BILAN FINAL
+TU SAIS QUI TU ES
+2h30
+
+
+
+
+📊 RÉCAP DU PROGRAMME
+Copier le tableau
+
+
+Semaine
+Domaine
+Jours
+Heures
+Passion attendue
+
+
+
+S1-S2
+Web + Linux + Réseaux
+J1-J14
+35h
+Base obligatoire
+
+
+S3-S4
+Cybersécurité
+J15-J28
+35h
+🔴 TA PRIORITÉ #1
+
+
+S5
+Python + Automation
+J29-J35
+17.5h
+🟡 PRIORITÉ #2
+
+
+S6
+IA / ML
+J36-J42
+17.5h
+🟣 PRIORITÉ #3
+
+
+S7
+Systèmes + Bas niveau
+J43-J49
+17.5h
+🟠 PRIORITÉ #4
+
+
+S8
+Décision + Lancement
+J50-J60
+27.5h
+🟢 TU CHOISIS
+
+
+TOTAL
+5 domaines explorés
+60 jours
+~150h
+🎯 TA VOIE

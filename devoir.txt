@@ -1,0 +1,146 @@
+🔥 JOUR 1 - 3 PROJETS PRATIQUES
+Règles :
+❌ PAS de correction avant que t'aies fini
+❌ PAS de Google / ChatGPT
+✅ Tu galères 10 min → tu relis le cours
+✅ Tu galères 20 min → tu me demandes UN indice
+✅ Tu m'envoies TON code à la fin
+
+🎯 PROJET 1 : GESTIONNAIRE DE NOTES (30 min)
+📋 CONSIGNES
+Tu as ce tableau :
+const classe = [
+  { nom: "Styve", note: 15, matiere: "Math" },
+  { nom: "Paul", note: 8, matiere: "Math" },
+  { nom: "Marie", note: 17, matiere: "Math" },
+  { nom: "Jean", note: 5, matiere: "Math" },
+  { nom: "Awa", note: 12, matiere: "Math" },
+  { nom: "Karim", note: 19, matiere: "Math" },
+]
+Tu dois créer 5 fonctions arrow :
+
+getAdmis(classe) → retourne les étudiants avec note >= 10
+getRecales(classe) → retourne les étudiants avec note < 10
+getNomsEnMajuscules(classe) → retourne juste les noms en MAJUSCULES
+getMoyenneClasse(classe) → retourne la moyenne générale
+getMeilleurEtudiant(classe) → retourne l'étudiant avec la meilleure note
+
+Teste chaque fonction avec console.log().
+
+🎯 PROJET 2 : PANIER E-COMMERCE (45 min)
+📋 CONSIGNES
+Crée un panier avec ces produits :
+const panier = [
+  { nom: "Laptop", prix: 800, quantite: 1 },
+  { nom: "Souris", prix: 25, quantite: 2 },
+  { nom: "Clavier", prix: 60, quantite: 1 },
+  { nom: "Écran", prix: 200, quantite: 2 },
+  { nom: "USB", prix: 10, quantite: 5 },
+]
+Crée ces fonctions :
+
+calculerTotal(panier) → retourne le prix total (prix × quantité pour chaque produit)
+
+appliquerReduction(panier, pourcentage) → retourne le total après réduction
+
+Exemple : appliquerReduction(panier, 10) → total - 10%
+
+
+getProduitsChers(panier, seuil) → retourne les produits dont le prix dépasse le seuil
+
+Exemple : getProduitsChers(panier, 100) → [Laptop, Écran]
+
+
+getResume(panier) → retourne un tableau de strings formatés
+
+Exemple : ["Laptop x1 = 800€", "Souris x2 = 50€", ...]
+
+
+getProduitLePlusCher(panier) → retourne le produit avec le prix unitaire le plus élevé
+
+
+
+🎯 PROJET 3 : MINI RÉSEAU SOCIAL (60 min) 🔥
+📋 CONSIGNES
+LE GROS PROJET DU JOUR. Combine tout ce que t'as appris.
+Voici les utilisateurs :
+const users = [
+  { 
+    id: 1, 
+    nom: "Styve", 
+    age: 19, 
+    ville: "Douala",
+    posts: 45,
+    followers: 320,
+    verifie: true
+  },
+  { 
+    id: 2, 
+    nom: "Paul", 
+    age: 25, 
+    ville: "Yaoundé",
+    posts: 12,
+    followers: 150,
+    verifie: false
+  },
+  { 
+    id: 3, 
+    nom: "Marie", 
+    age: 22, 
+    ville: "Douala",
+    posts: 89,
+    followers: 1200,
+    verifie: true
+  },
+  { 
+    id: 4, 
+    nom: "Jean", 
+    age: 30, 
+    ville: "Paris",
+    posts: 5,
+    followers: 80,
+    verifie: false
+  },
+  { 
+    id: 5, 
+    nom: "Awa", 
+    age: 21, 
+    ville: "Douala",
+    posts: 67,
+    followers: 950,
+    verifie: true
+  },
+]
+Crée CES fonctions :
+
+getUtilisateursVerifies(users) → retourne que les users vérifiés
+
+getUtilisateursParVille(users, ville) → retourne les users d'une ville donnée
+
+Exemple : getUtilisateursParVille(users, "Douala")
+
+
+getInfluenceurs(users) → retourne les users avec +500 followers
+
+getTotalPosts(users) → retourne le nombre TOTAL de posts de TOUS les users
+
+getMoyenneAge(users) → retourne l'âge moyen
+
+getUserLePlusSuivi(users) → retourne l'utilisateur avec le plus de followers
+
+getStatsVille(users, ville) → retourne un objet avec les stats d'une ville :
+{
+  ville: "Douala",
+  nbUsers: 3,
+  totalPosts: 201,
+  totalFollowers: 2470,
+  moyenneAge: 20.67
+}
+
+getClassement(users) → retourne les users triés par nombre de followers (du plus grand au plus petit) avec JUSTE nom + followers
+[
+  { nom: "Marie", followers: 1200 },
+  { nom: "Awa", followers: 950 },
+  ...
+]
+Indice : utilise .sort() avant ou après .map()
