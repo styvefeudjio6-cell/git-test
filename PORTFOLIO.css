@@ -14,7 +14,10 @@ img {
     border-radius: 20px;
     margin: 20px auto;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> f60aecb5970e928e8dda250a3c277dc9ecc1b815
 #h2 h2 {
         font-size: 40px;
         color: red;
@@ -78,7 +81,11 @@ img {
     text-align: initial;
 }
 h2 {
+<<<<<<< HEAD
     font-size: 40px;
+=======
+    font-size: 50px;
+>>>>>>> f60aecb5970e928e8dda250a3c277dc9ecc1b815
     color: red;
     text-decoration: underline;
     text-align: center;
@@ -120,6 +127,7 @@ h2 {
     background-color: lightgray;
     justify-content: space-evenly;
     gap : 10px;
+<<<<<<< HEAD
       display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 16px;
@@ -128,10 +136,13 @@ h2 {
   margin: 20px auto;
   padding: 10px;
   
+=======
+>>>>>>> f60aecb5970e928e8dda250a3c277dc9ecc1b815
 }
 .img {
     border: 3px solid black;
     border-radius: 20px;
+<<<<<<< HEAD
 }
 #image img {
   width: 100%;
@@ -149,3 +160,6 @@ h2 {
   #image { grid-template-columns: repeat(2, 1fr); }
   #image img { height: 200px; }
 }
+=======
+}
+>>>>>>> f60aecb5970e928e8dda250a3c277dc9ecc1b815

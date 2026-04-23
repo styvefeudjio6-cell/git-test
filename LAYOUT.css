@@ -63,6 +63,7 @@ body {
     display: grid;
     grid-template-rows: 1fr 1fr;
     gap: 10px;
+<<<<<<< HEAD
     margin: 20px;
     grid-column: 2 / 3;
     grid-row: 1 / 3;
@@ -71,6 +72,18 @@ body {
 
 .features .article3 {
     grid-row: 2 / 3;
+=======
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    margin: 20px;
+}
+.features .article2 {
+    grid-row: 1 / 1;
+    align-content: center;
+}
+.features .article3 {
+    grid-row: 2 / 2;
+>>>>>>> f60aecb5970e928e8dda250a3c277dc9ecc1b815
     align-content: center;
     border-top: #000000 solid 3px;
 }
