@@ -10,4 +10,5 @@ void triRapide(int tab[], int n);
 void triSelection(int tab[], int n);
 void triFusion(int tab[], int n);
 void triBitonique(int tab[], int n);
+int estPuissanceDeDeux(int n);
 #endif

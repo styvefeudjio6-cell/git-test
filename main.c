@@ -8,7 +8,7 @@ int main(void) {
 
     int n, choixTri, choixRemplissage;
     printf("Taille du tableau : ");
-    scanf("%d ",&n);
+    scanf("%d",&n);
 
     int* tab = creerTableau(n);
     printf("====REMPLISSAGE====\n");
@@ -42,7 +42,7 @@ int main(void) {
     printf("5. Tri fusion\n");
     printf("6. Tri butonique\n");
     printf("Choix : \n");
-    scanf("%d", choixTri);
+    scanf("%d", &choixTri);
     switch (choixTri)
     {
         case 1:
@@ -61,12 +61,17 @@ int main(void) {
             triFusion(tab, n);
             break;
         case 6:
+        if (!estPuissanceDeDeux(n)) 
+        {
+        printf("Erreur : taille doit etre une puissance de 2 (2, 4, 8, 16...)\n");
+        printf("Taille actuelle : %d\n", n);
+        }
             triBitonique(tab, n);
             break;            
         default:
             printf("Choix invalide\n");
             free(tab);
-        break;
+        return 1;
     }
     printf("Apres : ");
     afficherTableau(tab, n);
