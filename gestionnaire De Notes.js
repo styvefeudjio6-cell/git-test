@@ -50,4 +50,6 @@ console.log("les produits chers sont :",getProduitsChers)
         return plusChers
         } 
  })
-  console.log(getProduitLePlusCher)
+  console.log(getProduitLePlusCher)n
+  ùmg
+  -

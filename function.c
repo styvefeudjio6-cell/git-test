@@ -39,7 +39,7 @@ void triBulles(int tab[], int n) {
     }
 }
 void triInsertion(int tab[], int n) {
-    for (int i = 0; i < n; i++)
+    for (int i = 1; i < n; i++)
     {
         int cle = tab [i];
         int j = i - 1;
@@ -86,10 +86,11 @@ void triRapide(int tab[], int n) {
 }
 void triSelection(int tab[], int n) {
     for (int i = 0; i < n-1; i++) {
-        int min = i;
+        int min;
         for (int j = i+1; j < n; j++) {
-            if (tab[j] < tab[min])
+            if (tab[j] < tab[min]) {
                 min = j;
+            }   
         }
         int tmp = tab[i];
         tab[i] = tab[min];

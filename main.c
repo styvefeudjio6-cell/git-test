@@ -4,7 +4,7 @@
 #include<time.h>
 
 int main(void) {
-    srand(time(NULL));
+    srand(time(0));
 
     int n, choixTri, choixRemplissage;
     printf("Taille du tableau : ");

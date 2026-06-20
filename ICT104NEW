@@ -1,0 +1,411 @@
+import React, { useState, useEffect } from 'react';
+
+// ═══════════════════════════════════════════════════════
+// BANQUE DE 150 QCM — ICT104 | Prof. KUTCHE
+// ═══════════════════════════════════════════════════════
+const QUESTIONS = [
+  // ---- PARTIE A : GÉNÉRATIONS (1-30) ----
+  { id:1, part:"A", q:"Les tubes à vide (vacuum tubes) caractérisent :", o:["1ʳᵉ génération","2ᵉ génération","3ᵉ génération","4ᵉ génération"], a:0 },
+  { id:2, part:"A", q:"Le transistor a été inventé en :", o:["1947","1958","1971","1936"], a:0 },
+  { id:3, part:"A", q:"L'ENIAC appartient à :", o:["1ʳᵉ gén","2ᵉ gén","3ᵉ gén","4ᵉ gén"], a:0 },
+  { id:4, part:"A", q:"Le circuit intégré (IC) marque :", o:["1ʳᵉ gén","2ᵉ gén","3ᵉ gén","5ᵉ gén"], a:2 },
+  { id:5, part:"A", q:"Le microprocesseur apparaît en :", o:["1965","1971","1947","1981"], a:1 },
+  { id:6, part:"A", q:"L'intelligence artificielle est l'objectif de :", o:["3ᵉ gén","4ᵉ gén","5ᵉ gén","2ᵉ gén"], a:2 },
+  { id:7, part:"A", q:"Quel ordre chronologique est CORRECT ?", o:["Tubes → Transistors → IC → Microprocesseur","Transistors → Tubes → IC → Microprocesseur","IC → Tubes → Transistors → Microprocesseur","Tubes → IC → Transistors → Microprocesseur"], a:0 },
+  { id:8, part:"A", q:"Le langage machine apparaît dès :", o:["1ʳᵉ gén","2ᵉ gén","3ᵉ gén","4ᵉ gén"], a:0 },
+  { id:9, part:"A", q:"Quelle techno a REMPLACÉ les tubes à vide ?", o:["Les IC","Les transistors","Les microprocesseurs","Le SSD"], a:1 },
+  { id:10, part:"A", q:"Un microprocesseur regroupe :", o:["Plusieurs transistors sur une puce","Une RAM","Un disque dur","Un écran"], a:0 },
+  { id:11, part:"A", q:"Les langages évolués (high-level) se généralisent surtout à partir de :", o:["1ʳᵉ gén","2ᵉ gén","3ᵉ gén","5ᵉ gén"], a:2 },
+  { id:12, part:"A", q:"Le traitement parallèle massif est associé à :", o:["2ᵉ gén","3ᵉ gén","5ᵉ gén","1ʳᵉ gén"], a:2 },
+  { id:13, part:"A", q:"Quelle affirmation est FAUSSE ?", o:["La 1ʳᵉ gén consommait beaucoup d'énergie","Les transistors sont plus petits que les tubes","La 4ᵉ gén utilise des tubes à vide","Le microprocesseur est de 4ᵉ gén"], a:2 },
+  { id:14, part:"A", q:"Les cartes perforées étaient surtout utilisées en :", o:["1ʳᵉ gén","4ᵉ gén","5ᵉ gén","3ᵉ gén"], a:0 },
+  { id:15, part:"A", q:"Le transistor utilise un matériau :", o:["Conducteur pur","Semi-conducteur","Isolant","Liquide"], a:1 },
+  { id:16, part:"A", q:"Les ordinateurs deviennent plus petits à partir de :", o:["1ʳᵉ gén","2ᵉ gén","dès la 2ᵉ gén progressivement","jamais"], a:2 },
+  { id:17, part:"A", q:"Le silicium est le matériau de base des :", o:["Tubes","Transistors et IC","Relais","Cartes perforées"], a:1 },
+  { id:18, part:"A", q:"Quelle génération introduit les OS modernes multitâches ?", o:["1ʳᵉ","2ᵉ","3ᵉ et 4ᵉ","aucune"], a:2 },
+  { id:19, part:"A", q:"Le terme « VLSI » est lié à :", o:["1ʳᵉ gén","2ᵉ gén","4ᵉ gén","tubes"], a:2 },
+  { id:20, part:"A", q:"Avant le langage machine, on programmait :", o:["En Python","Par câblage physique/cartes","En C","En assembleur"], a:1 },
+  { id:21, part:"A", q:"Le principal inconvénient des tubes à vide :", o:["Trop rapides","Chaleur et fragilité","Trop petits","Trop chers en silicium"], a:1 },
+  { id:22, part:"A", q:"Combien de générations sont généralement reconnues ?", o:["3","4","5","7"], a:2 },
+  { id:23, part:"A", q:"L'assembleur comme langage apparaît surtout dès :", o:["2ᵉ gén","5ᵉ gén","jamais","4ᵉ gén uniquement"], a:0 },
+  { id:24, part:"A", q:"Quelle paire est correctement associée ?", o:["Tube → 4ᵉ gén","Transistor → 2ᵉ gén","IC → 1ʳᵉ gén","Microprocesseur → 2ᵉ gén"], a:1 },
+  { id:25, part:"A", q:"La miniaturisation extrême repose sur :", o:["Plus de tubes","L'intégration de transistors","Plus de relais","Des cartes perforées"], a:1 },
+  { id:26, part:"A", q:"Le robot et la reconnaissance vocale relèvent surtout de :", o:["1ʳᵉ gén","2ᵉ gén","5ᵉ gén","3ᵉ gén"], a:2 },
+  { id:27, part:"A", q:"Quelle est la génération la PLUS ancienne ?", o:["Celle des IC","Celle des transistors","Celle des tubes à vide","Celle des microprocesseurs"], a:2 },
+  { id:28, part:"A", q:"Le passage tube→transistor a permis principalement :", o:["Plus de chaleur","Moins de fiabilité","Réduction taille + consommation","Plus grand encombrement"], a:2 },
+  { id:29, part:"A", q:"Quelle est FAUSSE à propos des microprocesseurs ?", o:["Ils intègrent l'UAL","Ils sont de 4ᵉ gén","Ils contiennent des millions de transistors","Ils datent de la 1ʳᵉ gén"], a:3 },
+  { id:30, part:"A", q:"« Intel 4004 » est un exemple de :", o:["Tube","Premier microprocesseur commercial","Relais","SSD"], a:1 },
+
+  // ---- PARTIE B : MÉMOIRES (31-65) ----
+  { id:31, part:"B", q:"RAM signifie :", o:["Read Access Memory","Random Access Memory","Run Access Memory","Rapid Access Memory"], a:1 },
+  { id:32, part:"B", q:"La RAM est une mémoire :", o:["Permanente","Volatile","Optique","Magnétique"], a:1 },
+  { id:33, part:"B", q:"ROM signifie :", o:["Read Only Memory","Random Only Memory","Run Only Memory","Rapid Only Memory"], a:0 },
+  { id:34, part:"B", q:"La ROM est :", o:["Modifiable à volonté","Volatile","Non volatile","Cache"], a:2 },
+  { id:35, part:"B", q:"La mémoire la PLUS rapide est :", o:["Disque dur","RAM","Cache","SSD"], a:2 },
+  { id:36, part:"B", q:"Le registre est :", o:["Plus lent que la RAM","Plus rapide que la cache","Aussi lent que le disque","Une mémoire de masse"], a:1 },
+  { id:37, part:"B", q:"Le BIOS est généralement stocké dans :", o:["RAM","ROM","Cache","Registre"], a:1 },
+  { id:38, part:"B", q:"Le disque dur est une mémoire :", o:["Primaire","Secondaire","Cache","Registre"], a:1 },
+  { id:39, part:"B", q:"Les registres sont situés :", o:["Dans le disque dur","Dans le processeur","Dans la RAM","Dans la ROM"], a:1 },
+  { id:40, part:"B", q:"Une mémoire volatile perd son contenu :", o:["Quand elle est pleine","Quand on coupe l'alimentation","Au redémarrage Windows","Jamais"], a:1 },
+  { id:41, part:"B", q:"Hiérarchie du plus RAPIDE au plus LENT :", o:["Registre → Cache → RAM → Disque","RAM → Cache → Registre → Disque","Cache → RAM → Registre → Disque","Disque → RAM → Cache → Registre"], a:0 },
+  { id:42, part:"B", q:"Hiérarchie du plus PETIT (capacité) au plus GRAND :", o:["Disque → RAM → Cache → Registre","Registre → Cache → RAM → Disque","RAM → Registre → Cache → Disque","Cache → Registre → RAM → Disque"], a:1 },
+  { id:43, part:"B", q:"La mémoire cache sert à :", o:["Stocker définitivement","Accélérer l'accès aux données fréquentes","Remplacer le disque","Alimenter le CPU"], a:1 },
+  { id:44, part:"B", q:"Quel type est NON volatile ?", o:["RAM","Cache","Registre","ROM"], a:3 },
+  { id:45, part:"B", q:"La SRAM est surtout utilisée pour :", o:["Le disque","La cache","La ROM","Le BIOS"], a:1 },
+  { id:46, part:"B", q:"La DRAM doit être :", o:["Rafraîchie périodiquement","Jamais alimentée","Optique","Non volatile"], a:0 },
+  { id:47, part:"B", q:"Plus une mémoire est rapide, généralement elle est :", o:["Plus grande et moins chère","Plus petite et plus chère","Plus lente","Non volatile"], a:1 },
+  { id:48, part:"B", q:"L'unité de mesure de capacité mémoire est :", o:["Le Hertz","L'octet (byte)","Le Volt","Le bit/s"], a:1 },
+  { id:49, part:"B", q:"1 Ko classique vaut :", o:["1000 bits","1024 octets","8 octets","100 octets"], a:1 },
+  { id:50, part:"B", q:"Combien de bits dans 1 octet ?", o:["4","8","16","32"], a:1 },
+  { id:51, part:"B", q:"La mémoire morte se nomme :", o:["RAM","ROM","Cache","SSD"], a:1 },
+  { id:52, part:"B", q:"Le temps d'accès se mesure en :", o:["Octets","Nanosecondes","Hertz","Volts"], a:1 },
+  { id:53, part:"B", q:"La bande passante mémoire se mesure en :", o:["Octets/seconde","Secondes","Hertz seul","Bits seul"], a:0 },
+  { id:54, part:"B", q:"RAM : 20 ns au 1ᵉʳ accès puis 10 ns × 3 accès. Temps total ?", o:["40 ns","50 ns","60 ns","30 ns"], a:1 },
+  { id:55, part:"B", q:"(Suite) 8 octets/accès, 4 accès. Octets totaux ?", o:["8","16","24","32"], a:3 },
+  { id:56, part:"B", q:"(Suite) Bande passante (32 o / 50 ns) ?", o:["320 Mo/s","640 Mo/s","1,28 Go/s","64 Mo/s"], a:1 },
+  { id:57, part:"B", q:"La distance CPU↔RAM influence le temps d'accès :", o:["De façon majeure","De façon négligeable","Jamais du tout","Plus que la latence"], a:1 },
+  { id:58, part:"B", q:"Le « cache miss » signifie :", o:["Donnée trouvée en cache","Donnée absente du cache","Cache plein","Cache détruit"], a:1 },
+  { id:59, part:"B", q:"Mémoire la plus proche du CPU :", o:["Disque","RAM","Registre","SSD"], a:2 },
+  { id:60, part:"B", q:"Le SSD est :", o:["Volatile","Une mémoire secondaire non volatile","Plus lent que le HDD","Une mémoire cache"], a:1 },
+  { id:61, part:"B", q:"Quelle affirmation est FAUSSE ?", o:["La ROM est non volatile","La RAM est volatile","Le registre est dans le CPU","La cache est plus lente que la RAM"], a:3 },
+  { id:62, part:"B", q:"L'EEPROM est :", o:["Effaçable électriquement","Volatile","Plus rapide qu'un registre","Du stockage magnétique"], a:0 },
+  { id:63, part:"B", q:"La mémoire virtuelle utilise :", o:["Uniquement la RAM","Une partie du disque comme extension de RAM","La ROM","Le cache L1"], a:1 },
+  { id:64, part:"B", q:"Le « principe de localité » justifie l'usage de :", o:["La ROM","La cache","Le BIOS","Le disque"], a:1 },
+  { id:65, part:"B", q:"Hiérarchie de COÛT par octet (cher→bon marché) :", o:["Registre → Cache → RAM → Disque","Disque → RAM → Cache → Registre","RAM → Disque → Cache → Registre","Cache → Disque → RAM → Registre"], a:0 },
+
+  // ---- PARTIE C : ARCHITECTURE (66-100) ----
+  { id:66, part:"C", q:"L'architecture de Von Neumann comporte :", o:["Deux mémoires séparées","Une seule mémoire pour données ET programmes","Aucun processeur","Plusieurs processeurs obligatoires"], a:1 },
+  { id:67, part:"C", q:"UAL signifie :", o:["Unité d'Accès Logique","Unité Arithmétique et Logique","Unité d'Administration Logique","Unité d'Adresse Logique"], a:1 },
+  { id:68, part:"C", q:"L'unité de contrôle a pour rôle :", o:["Stocker les données","Contrôler l'exécution des instructions","Afficher les résultats","Sauvegarder les fichiers"], a:1 },
+  { id:69, part:"C", q:"Le bus de données transporte :", o:["Les instructions uniquement","Les données","Les adresses uniquement","Le courant électrique"], a:1 },
+  { id:70, part:"C", q:"Le bus d'adresses sert à :", o:["Transporter les données","Identifier les cases mémoire","Afficher les résultats","Stocker les programmes"], a:1 },
+  { id:71, part:"C", q:"Le cycle d'exécution comprend :", o:["Lire – Écrire","Fetch – Decode – Execute","Compiler – Exécuter","Charger – Sauvegarder"], a:1 },
+  { id:72, part:"C", q:"Le registre PC contient :", o:["Les données","L'adresse de la PROCHAINE instruction","Le résultat des calculs","Le code machine"], a:1 },
+  { id:73, part:"C", q:"Le registre IR contient :", o:["L'instruction EN COURS","Une adresse mémoire","Une donnée utilisateur","Le système d'exploitation"], a:0 },
+  { id:74, part:"C", q:"Dans Von Neumann, le « goulot d'étranglement » est :", o:["Le CPU trop rapide","Le bus unique mémoire↔CPU","L'écran","Le clavier"], a:1 },
+  { id:75, part:"C", q:"L'architecture Harvard se distingue par :", o:["Une seule mémoire","Mémoires données/instructions SÉPARÉES","Aucun bus","Pas de CPU"], a:1 },
+  { id:76, part:"C", q:"Le processeur communique avec :", o:["La mémoire","Les périphériques","Le disque","Toutes les réponses"], a:3 },
+  { id:77, part:"C", q:"Le bus de contrôle transporte :", o:["Les données","Les signaux de commande/synchronisation","Les adresses","Le code source"], a:1 },
+  { id:78, part:"C", q:"Quel composant fait les calculs ?", o:["L'UAL","Le PC","Le bus","La ROM"], a:0 },
+  { id:79, part:"C", q:"La largeur du bus d'adresses détermine :", o:["La vitesse du CPU","La quantité de mémoire adressable","La taille de l'écran","Le nombre de registres"], a:1 },
+  { id:80, part:"C", q:"Avec un bus d'adresses de n bits, on adresse :", o:["n cases","2ⁿ cases","n² cases","2n cases"], a:1 },
+  { id:81, part:"C", q:"Un bus d'adresses de 16 bits adresse :", o:["16 cases","256 cases","65536 cases","1024 cases"], a:2 },
+  { id:82, part:"C", q:"Le « fetch » consiste à :", o:["Exécuter","Aller chercher l'instruction en mémoire","Décoder","Afficher"], a:1 },
+  { id:83, part:"C", q:"Le « decode » consiste à :", o:["Chercher l'instruction","Interpréter le code de l'instruction","Stocker","Imprimer"], a:1 },
+  { id:84, part:"C", q:"Après l'exécution d'une instruction, le PC :", o:["Reste fixe","Pointe vers l'instruction suivante","S'efface","Va vers la ROM"], a:1 },
+  { id:85, part:"C", q:"L'horloge (clock) du CPU se mesure en :", o:["Octets","Hertz","Volts","Mètres"], a:1 },
+  { id:86, part:"C", q:"Un CPU à 3 GHz exécute (en théorie) :", o:["3 cycles/s","3 milliards de cycles/s","3000 cycles/s","3 millions de cycles/s"], a:1 },
+  { id:87, part:"C", q:"Quelle affirmation est FAUSSE ?", o:["L'UAL fait des additions","Le PC contient l'adresse suivante","L'IR stocke des données utilisateur","L'UC pilote l'exécution"], a:2 },
+  { id:88, part:"C", q:"Les 3 bus principaux sont :", o:["Données, Adresses, Contrôle","Données, ROM, RAM","CPU, RAM, Disque","Fetch, Decode, Execute"], a:0 },
+  { id:89, part:"C", q:"Le registre accumulateur sert à :", o:["Stocker des adresses uniquement","Accumuler des résultats intermédiaires de l'UAL","Contrôler l'horloge","Adresser la ROM"], a:1 },
+  { id:90, part:"C", q:"Le bus de données est dit « bidirectionnel » car :", o:["Il va seulement vers le CPU","Les données circulent dans les 2 sens","Il est inutile","Il transporte des adresses"], a:1 },
+  { id:91, part:"C", q:"Le bus d'adresses est généralement :", o:["Bidirectionnel","Unidirectionnel (CPU→mémoire)","Inexistant","Optique"], a:1 },
+  { id:92, part:"C", q:"Plus la fréquence d'horloge est élevée :", o:["Plus le CPU est lent","Plus il exécute d'instructions/seconde","Moins il consomme","Aucun effet"], a:1 },
+  { id:93, part:"C", q:"Le « pipeline » permet :", o:["De ralentir le CPU","D'exécuter plusieurs instructions en chevauchement","De supprimer la RAM","D'éteindre le CPU"], a:1 },
+  { id:94, part:"C", q:"Un registre de 32 bits peut contenir une valeur max non signée de :", o:["32","2³² − 1","1024","2³¹"], a:1 },
+  { id:95, part:"C", q:"Quelle est la bonne séquence du cycle d'instruction ?", o:["Decode → Fetch → Execute","Fetch → Decode → Execute","Execute → Fetch → Decode","Fetch → Execute → Decode"], a:1 },
+  { id:96, part:"C", q:"La fréquence et l'IPC déterminent :", o:["La capacité disque","La performance du CPU","La taille RAM","La couleur de l'écran"], a:1 },
+  { id:97, part:"C", q:"Dans Von Neumann, instructions et données partagent :", o:["Deux bus séparés","Le MÊME bus et la même mémoire","Aucune mémoire","Le clavier"], a:1 },
+  { id:98, part:"C", q:"Le registre d'état (flags) contient :", o:["Des adresses","Des indicateurs (ZF, CF, SF...)","Le programme","La RAM"], a:1 },
+  { id:99, part:"C", q:"Quel élément N'est PAS un bus ?", o:["Bus de données","Bus d'adresses","Bus de contrôle","Bus accumulateur"], a:3 },
+  { id:100, part:"C", q:"L'unité de commande synchronise grâce à :", o:["L'écran","L'horloge système","Le disque","La ROM seule"], a:1 },
+
+  // ---- PARTIE D : PROCESSEUR & ASSEMBLEUR (101-150) ----
+  { id:101, part:"D", q:"L'assembleur est :", o:["Un OS","Un langage de bas niveau","Une mémoire","Un processeur"], a:1 },
+  { id:102, part:"D", q:"Une instruction assembleur est :", o:["Traduite directement en langage machine","Exécutée par Windows","Une page web","Une base de données"], a:0 },
+  { id:103, part:"D", q:"Dans x86, EAX est :", o:["Un registre","Une mémoire","Un disque","Un compilateur"], a:0 },
+  { id:104, part:"D", q:"Quelle instruction réalise une ADDITION ?", o:["SUB","DIV","ADD","MUL"], a:2 },
+  { id:105, part:"D", q:"Quelle instruction réalise une SOUSTRACTION ?", o:["SUB","MOV","JMP","NEG"], a:0 },
+  { id:106, part:"D", q:"L'instruction MOV sert à :", o:["Comparer","Déplacer/copier une donnée","Diviser","Multiplier"], a:1 },
+  { id:107, part:"D", q:"L'instruction CMP sert à :", o:["Comparer deux valeurs","Additionner","Afficher","Créer une variable"], a:0 },
+  { id:108, part:"D", q:"L'instruction JMP permet :", o:["D'additionner","De comparer","D'effectuer un saut","De multiplier"], a:2 },
+  { id:109, part:"D", q:"Après un CMP, quel drapeau indique un résultat NUL ?", o:["CF","OF","SF","ZF"], a:3 },
+  { id:110, part:"D", q:"Quelle instruction change le SIGNE d'un nombre ?", o:["MOV","NEG","CMP","PUSH"], a:1 },
+  { id:111, part:"D", q:"PUSH sert à :", o:["Lire la RAM","Empiler une valeur sur la pile","Comparer","Additionner"], a:1 },
+  { id:112, part:"D", q:"POP sert à :", o:["Empiler","Dépiler (récupérer du sommet de pile)","Multiplier","Sauter"], a:1 },
+  { id:113, part:"D", q:"La pile (stack) fonctionne en mode :", o:["FIFO","LIFO","Aléatoire","Trié"], a:1 },
+  { id:114, part:"D", q:"Le registre SP pointe vers :", o:["La prochaine instruction","Le sommet de la pile","La ROM","L'écran"], a:1 },
+  { id:115, part:"D", q:"CF (Carry Flag) indique :", o:["Un résultat nul","Une retenue/dépassement non signé","Un signe négatif","Une parité"], a:1 },
+  { id:116, part:"D", q:"SF (Sign Flag) indique :", o:["Une retenue","Un résultat négatif","Un zéro","Un débordement"], a:1 },
+  { id:117, part:"D", q:"OF (Overflow Flag) concerne :", o:["Le débordement en arithmétique SIGNÉE","La parité","La pile","Les chaînes"], a:0 },
+  { id:118, part:"D", q:"L'instruction JE saute si :", o:["ZF = 1","ZF = 0","CF = 1","SF = 1"], a:0 },
+  { id:119, part:"D", q:"L'instruction JNE saute si :", o:["ZF = 1","ZF = 0","CF = 1","OF = 1"], a:1 },
+  { id:120, part:"D", q:"Pour faire une BOUCLE, on combine généralement :", o:["MOV seul","CMP + saut conditionnel + JMP","ADD seul","PUSH + POP"], a:1 },
+  { id:121, part:"D", q:"Le mode d'adressage IMMÉDIAT signifie :", o:["La valeur est dans l'instruction (MOV r1,#5)","La valeur est en RAM","C'est une adresse","C'est un registre"], a:0 },
+  { id:122, part:"D", q:"Le mode d'adressage DIRECT utilise :", o:["Une constante","Une adresse mémoire fixe","Le sommet de pile","Aucun opérande"], a:1 },
+  { id:123, part:"D", q:"Le mode INDIRECT par registre [r0] signifie :", o:["r0 contient la valeur","r0 contient l'ADRESSE de la valeur","r0 est vide","r0 est la pile"], a:1 },
+  { id:124, part:"D", q:"Dans LOAD r3, [r2], on lit :", o:["La valeur r2 elle-même","La mémoire à l'adresse contenue dans r2","La ROM","Le PC"], a:1 },
+  { id:125, part:"D", q:"Pour parcourir une chaîne, on incrémente :", o:["Le flag ZF","L'adresse (pointeur) à chaque tour","Le PC manuellement","La pile"], a:1 },
+  { id:126, part:"D", q:"L'octet nul (0) dans une chaîne sert de :", o:["Premier caractère","Marqueur de FIN","Espace","Retenue"], a:1 },
+  { id:127, part:"D", q:"Dans un CALL de procédure, l'adresse de retour est :", o:["Effacée","Empilée sur la pile","Mise dans EAX","Ignorée"], a:1 },
+  { id:128, part:"D", q:"RET récupère l'adresse de retour :", o:["Dans EAX","Sur la pile","Dans le PC initial","En ROM"], a:1 },
+  { id:129, part:"D", q:"Une interruption permet :", o:["D'arrêter définitivement le CPU","De suspendre temporairement pour traiter un événement","D'additionner","De vider la RAM"], a:1 },
+  { id:130, part:"D", q:"Le vecteur d'interruption contient :", o:["Des données","L'adresse de la routine de traitement","La pile","Le résultat"], a:1 },
+  { id:131, part:"D", q:"Pour sauter si « inférieur ou égal », on utilise :", o:["JE","JLE","JMP","JNE"], a:1 },
+  { id:132, part:"D", q:"MOV r1, #0 initialise r1 à :", o:["L'adresse 0","La valeur 0","La pile","Indéfini"], a:1 },
+  { id:133, part:"D", q:"Dans le comptage de caractères, la condition d'arrêt est :", o:["CMP r3,#0 puis JE","ADD r1","PUSH r3","JMP boucle"], a:0 },
+  { id:134, part:"D", q:"Pour trouver le MAX d'un tableau, on initialise le max à :", o:["La plus grande valeur possible","Le 1ᵉʳ élément ou 0 (si valeurs ≥1)","La pile","L'adresse r0"], a:1 },
+  { id:135, part:"D", q:"Pour calculer une SOMME, on fait à chaque tour :", o:["MOV somme, élément","ADD somme, somme, élément","CMP somme","PUSH somme"], a:1 },
+  { id:136, part:"D", q:"Si on utilise le même registre pour parcourir ET sommer :", o:["Aucun problème","Conflit : il faut séparer les registres","Plus rapide","Obligatoire"], a:1 },
+  { id:137, part:"D", q:"L'instruction INC équivaut à :", o:["ADD reg, reg, #1","SUB reg, #1","MOV reg, #1","CMP reg, #1"], a:0 },
+  { id:138, part:"D", q:"L'instruction DEC équivaut à :", o:["ADD #1","SUB reg, #1","MUL","NEG"], a:1 },
+  { id:139, part:"D", q:"Quelle est FAUSSE ?", o:["CMP modifie les flags","CMP modifie l'opérande de destination","SUB modifie la destination","MOV copie une valeur"], a:1 },
+  { id:140, part:"D", q:"Après CMP r3, r1 avec r3 = r1, alors :", o:["ZF = 1","ZF = 0","CF = 1","SF = 1"], a:0 },
+  { id:141, part:"D", q:"JLE saute si (signé) :", o:["ZF=1 OU SF≠OF","ZF=0 seulement","CF=1 seulement","Jamais"], a:0 },
+  { id:142, part:"D", q:"Un saut INCONDITIONNEL est :", o:["JE","JNE","JMP","JLE"], a:2 },
+  { id:143, part:"D", q:"L'étiquette (label) boucle: sert à :", o:["Stocker une donnée","Marquer une adresse cible de saut","Additionner","Empiler"], a:1 },
+  { id:144, part:"D", q:"Combien de caractères dans \"BOSS\" (sans le nul) ?", o:["3","4","5","6"], a:1 },
+  { id:145, part:"D", q:"En parcourant [3,7,2,9,0] pour le MAX, on obtient :", o:["3","7","9","0"], a:2 },
+  { id:146, part:"D", q:"En sommant [3,7,2,9,0], on obtient :", o:["12","19","21","9"], a:2 },
+  { id:147, part:"D", q:"Un registre 8 bits non signé contient au max :", o:["127","255","256","128"], a:1 },
+  { id:148, part:"D", q:"Pour stocker des valeurs de 1 à 127, il faut au minimum :", o:["1 bit","7 bits","8 bits","16 bits"], a:1 },
+  { id:149, part:"D", q:"Quelle séquence réalise « r1 = r1 + 1 » ?", o:["SUB r1, #1","ADD r1, r1, #1","MOV r1, #1","CMP r1, #1"], a:1 },
+  { id:150, part:"D", q:"L'avantage de l'assembleur sur le langage machine :", o:["Plus rapide à exécuter","Plus lisible (mnémoniques)","Non traduit","Identique au binaire"], a:1 },
+];
+
+const PARTS = {
+  A: { name:"Générations des Ordinateurs", color:"#6366f1", icon:"🕰️" },
+  B: { name:"Mémoires", color:"#10b981", icon:"💾" },
+  C: { name:"Architecture des Ordinateurs", color:"#f59e0b", icon:"🏗️" },
+  D: { name:"Processeur & Assembleur", color:"#ef4444", icon:"⚙️" },
+};
+
+// Barème
+const PT_GOOD = 0.5, PT_BAD = -0.5, PT_NONE = -0.5;
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+export default function App() {
+  const [screen, setScreen] = useState("home"); // home | quiz | result
+  const [mode, setMode] = useState(null);
+  const [questions, setQuestions] = useState([]);
+  const [answers, setAnswers] = useState({});
+  const [current, setCurrent] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(0);
+  const [showReview, setShowReview] = useState(false);
+  const [filterPart, setFilterPart] = useState("all");
+
+  // Timer
+  useEffect(() => {
+    if (screen !== "quiz" || !mode?.timed) return;
+    if (timeLeft <= 0) { finish(); return; }
+    const t = setInterval(() => setTimeLeft(s => s - 1), 1000);
+    return () => clearInterval(t);
+  }, [screen, timeLeft, mode]);
+
+  function startQuiz(config) {
+    let qs = QUESTIONS;
+    if (config.part !== "all") qs = qs.filter(q => q.part === config.part);
+    if (config.shuffle) qs = shuffle(qs);
+    if (config.count) qs = qs.slice(0, config.count);
+    setQuestions(qs);
+    setAnswers({});
+    setCurrent(0);
+    setMode(config);
+    setTimeLeft(config.timed ? config.duration : 0);
+    setShowReview(false);
+    setScreen("quiz");
+  }
+
+  function selectAnswer(qid, idx) {
+    setAnswers(a => ({ ...a, [qid]: idx }));
+  }
+
+  function finish() { setScreen("result"); }
+
+  function computeScore() {
+    let good = 0, bad = 0, none = 0, pts = 0;
+    questions.forEach(q => {
+      const ans = answers[q.id];
+      if (ans === undefined) { none++; pts += PT_NONE; }
+      else if (ans === q.a) { good++; pts += PT_GOOD; }
+      else { bad++; pts += PT_BAD; }
+    });
+    return { good, bad, none, pts, max: questions.length * PT_GOOD };
+  }
+
+  const fmtTime = s => `${String(Math.floor(s/60)).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`;
+
+  // ═══════════ ÉCRAN ACCUEIL ═══════════
+  if (screen === "home") {
+    return (
+      <div style={S.app}>
+        <div style={S.header}>
+          <div style={S.headerInner}>
+            <div style={{fontSize:13, opacity:.85, letterSpacing:2}}>UNIVERSITÉ DE YAOUNDÉ I</div>
+            <h1 style={S.h1}>📘 QCM ICT104</h1>
+            <div style={{fontSize:15, opacity:.9}}>Architecture des Ordinateurs & Assembleur</div>
+            <div style={S.profBadge}>Prof. KUTCHE · Contrôle Continu</div>
+          </div>
+        </div>
+
+        <div style={S.container}>
+          <div style={S.infoCard}>
+            <div style={{display:'flex', justifyContent:'space-around', flexWrap:'wrap', gap:16}}>
+              <div style={S.stat}><div style={S.statNum}>150</div><div style={S.statLbl}>Questions</div></div>
+              <div style={S.stat}><div style={S.statNum}>4</div><div style={S.statLbl}>Parties</div></div>
+              <div style={S.stat}><div style={S.statNum}>+0,5</div><div style={S.statLbl}>Bonne rép.</div></div>
+              <div style={S.stat}><div style={{...S.statNum, color:'#ef4444'}}>−0,5</div><div style={S.statLbl}>Erreur/vide</div></div>
+            </div>
+          </div>
+
+          <h2 style={S.sectionTitle}>🎯 Mode Examen Blanc</h2>
+          <div style={S.modeCard} onClick={() => startQuiz({ name:"Examen Blanc", part:"all", shuffle:true, count:40, timed:true, duration:90*60 })}>
+            <div style={{fontSize:32}}>⏱️</div>
+            <div style={{flex:1}}>
+              <div style={S.modeTitle}>Examen Blanc Chronométré</div>
+              <div style={S.modeDesc}>40 questions aléatoires · 1h30 · Conditions réelles</div>
+            </div>
+            <div style={S.arrow}>→</div>
+          </div>
+
+          <div style={S.modeCard} onClick={() => startQuiz({ name:"Marathon", part:"all", shuffle:true, count:150, timed:false })}>
+            <div style={{fontSize:32}}>🏃</div>
+            <div style={{flex:1}}>
+              <div style={S.modeTitle}>Marathon Complet</div>
+              <div style={S.modeDesc}>Les 150 questions · Sans limite de temps</div>
+            </div>
+            <div style={S.arrow}>→</div>
+          </div>
+
+          <h2 style={S.sectionTitle}>📚 Réviser par Partie</h2>
+          {Object.entries(PARTS).map(([key, p]) => {
+            const count = QUESTIONS.filter(q => q.part === key).length;
+            return (
+              <div key={key} style={{...S.modeCard, borderLeft:`5px solid ${p.color}`}}
+                   onClick={() => startQuiz({ name:p.name, part:key, shuffle:false, timed:false })}>
+                <div style={{fontSize:32}}>{p.icon}</div>
+                <div style={{flex:1}}>
+                  <div style={S.modeTitle}>Partie {key} — {p.name}</div>
+                  <div style={S.modeDesc}>{count} questions · Mode entraînement</div>
+                </div>
+                <div style={S.arrow}>→</div>
+              </div>
+            );
+          })}
+
+          <div style={S.footer}>
+            💡 Conseil du Prof : commence par réviser partie par partie,<br/>puis teste-toi avec l'examen blanc chronométré !
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // ═══════════ ÉCRAN QUIZ ═══════════
+  if (screen === "quiz") {
+    const q = questions[current];
+    const p = PARTS[q.part];
+    const answered = Object.keys(answers).length;
+
+    return (
+      <div style={S.app}>
+        <div style={{...S.quizBar, background:p.color}}>
+          <div style={S.quizBarInner}>
+            <button style={S.backBtn} onClick={() => { if(confirm("Quitter le quiz ?")) setScreen("home"); }}>✕</button>
+            <div style={{flex:1, textAlign:'center'}}>
+              <div style={{fontSize:13, opacity:.9}}>{p.icon} Partie {q.part}</div>
+              <div style={{fontWeight:700}}>Question {current+1}/{questions.length}</div>
+            </div>
+            {mode?.timed
+              ? <div style={{...S.timer, color: timeLeft<300?'#fde047':'#fff'}}>⏱️ {fmtTime(timeLeft)}</div>
+              : <div style={{width:60, textAlign:'right', fontSize:13}}>{answered}/{questions.length}</div>}
+          </div>
+          <div style={S.progressTrack}>
+            <div style={{...S.progressFill, width:`${((current+1)/questions.length)*100}%`}} />
+          </div>
+        </div>
+
+        <div style={S.container}>
+          <div style={S.qCard}>
+            <div style={{...S.qNum, background:p.color}}>Q{q.id}</div>
+            <div style={S.qText}>{q.q}</div>
+          </div>
+
+          <div style={{marginTop:16}}>
+            {q.o.map((opt, i) => {
+              const sel = answers[q.id] === i;
+              return (
+                <div key={i} style={{...S.opt, ...(sel ? {borderColor:p.color, background:`${p.color}15`, boxShadow:`0 2px 12px ${p.color}30`} : {})}}
+                     onClick={() => selectAnswer(q.id, i)}>
+                  <div style={{...S.optLetter, ...(sel ? {background:p.color, color:'#fff', borderColor:p.color} : {})}}>
+                    {String.fromCharCode(65+i)}
+                  </div>
+                  <div style={{flex:1}}>{opt}</div>
+                  {sel && <div style={{color:p.color, fontSize:20}}>●</div>}
+                </div>
+              );
+            })}
+          </div>
+
+          {answers[q.id] !== undefined && (
+            <button style={S.clearBtn} onClick={() => setAnswers(a => { const n={...a}; delete n[q.id]; return n; })}>
+              ↺ Effacer ma réponse
+            </button>
+          )}
+
+          <div style={S.navRow}>
+            <button style={{...S.navBtn, opacity:current===0?.4:1}} disabled={current===0}
+                    onClick={() => setCurrent(c => c-1)}>← Précédent</button>
+            {current < questions.length-1
+              ? <button style={{...S.navBtn, ...S.navBtnPrimary, background:p.color}} onClick={() => setCurrent(c => c+1)}>Suivant →</button>
+              : <button style={{...S.navBtn, ...S.navBtnPrimary, background:'#10b981'}} onClick={() => { if(confirm("Terminer et voir le résultat ?")) finish(); }}>✓ Terminer</button>}
+          </div>
+
+          {/* Grille de navigation rapide */}
+          <div style={S.gridNav}>
+            {questions.map((qq, i) => {
+              const done = answers[qq.id] !== undefined;
+              return (
+                <div key={qq.id}
+                     style={{...S.gridDot, ...(i===current?{outline:`3px solid ${p.color}`, fontWeight:700}:{}), background: done?p.color:'#e5e7eb', color: done?'#fff':'#6b7280'}}
+                     onClick={() => setCurrent(i)}>
+                  {i+1}
+                </div>
+              );
+            })}
+          </div>
+
+          <button style={S.finishBtn} onClick={() => { if(confirm(`Tu as répondu à ${answered}/${questions.length}. Terminer ?`)) finish(); }}>
+            🏁 Terminer l'examen
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // ═══════════ ÉCRAN RÉSULTAT ═══════════
+  if (screen === "result") {
+    const sc = computeScore();
+    const pct = Math.max(0, (sc.pts / sc.max) * 100);
+    const note20 = Math.max(0, (sc.pts / sc.max) * 20);
+    let verdict, vColor;
+    if (note20 >= 14) { verdict = "🏆 Excellent ! Tu es prêt mon ami !"; vColor = "#10b981"; }
+    else if (note20 >= 10) { verdict = "👍 Bien, mais continue à réviser !"; vColor = "#f59e0b"; }
+    else { verdict = "📚 Courage ! Reprends les parties faibles."; vColor = "#ef4444"; }
+
+    // stats par partie
+    const byPart = {};
+    questions.forEach(q => {
+      if (!byPart[q.part]) byPart[q.part] = { good:0, total:0 };
+      byPart[q.part].total++;
+      if (answers[q.id] === q.a) byPart[q.part].good++;
+    });
+
+    const reviewList = filterPart === "all" ? questions : questions.filter(q => q.part === filterPart);
+
+    return (
+      <div style={S.app}>
+        <div style={{...S.header, background:`linear-gradient(135deg, ${vColor}, ${vColor}cc)`}}>
+          <div style={S.headerInner}>
+            <h1 style={{...S.h1, fontSize:26}}>Résultats</h1>
+            <div style={S.scoreCircle}>
+              <div style={{fontSize:40, fontWeight:800}}>{note20.toFixed(2)}</div>
+              <div style={{fontSize:14, opacity:.9
